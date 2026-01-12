@@ -12,7 +12,7 @@ export const GAME_COVERS_URL = "https://placehold.co/800x400/transparent/png?tex
 export const TEAMS_IMAGE_URL = "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?q=80&w=2070&auto=format&fit=crop";
 
 // Imagem dos Jogadores Reais com Faces e Nomes Oficiais
-export const PLAYERS_IMAGE_URL = "/players-real.png";
+export const PLAYERS_IMAGE_URL = "https://iili.io/fvtdt5u.md.png";
 
 export const WHATSAPP_LINK = "https://wa.me/5511999999999"; // Exemplo
 export const CHECKOUT_LINK = "#checkout";
