@@ -7,7 +7,7 @@
 export const LOGO_URL = "https://iili.io/fv4Ka0G.jpg";
 
 // Imagens
-export const HERO_IMAGE_URL = "https://iili.io/fvtQ7jt.md.jpg"; 
+export const HERO_IMAGE_URL = "https://iili.io/fvtQ7jt.md.jpg";
 export const GAME_COVERS_URL = "https://iili.io/fvtv041.png";
 export const TEAMS_IMAGE_URL = "https://iili.io/fvpUFQs.md.png";
 export const PLAYERS_IMAGE_URL = "https://iili.io/fvtdt5u.md.png";
@@ -17,7 +17,7 @@ export const PLAYERS_IMAGE_URL = "https://iili.io/fvtdt5u.md.png";
 // ========================================
 // URL do vídeo YouTube (VSL - Video Sales Letter)
 // Substitua pela URL do seu vídeo
-export const VSL_VIDEO_URL = "https://www.youtube.com/embed/ZWNlAOrcqoY?autoplay=0&rel=0&modestbranding=1";
+export const VSL_VIDEO_URL = "https://www.youtube.com/embed/S0YS75jvgXE";
 
 // ========================================
 // 👥 FEEDBACKS DE CLIENTES (EDITÁVEL VIA LINKS)
