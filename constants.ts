@@ -23,7 +23,7 @@ export const WHATSAPP_LINK = "https://wa.me/5511999999999";
 // conforme o usuário seleciona a versão (26 ou 25)
 
 export const CHECKOUT_LINK_EAFC26 = "https://go.invictuspay.app.br/qaatnpzass";
-export const CHECKOUT_LINK_EAFC25 = "https://go.invictuspay.app.br/qaatnpzass";
+export const CHECKOUT_LINK_EAFC25 = "https://go.invictuspay.app.br/fuv2ufja8l";
 
 // Padrão para compatibilidade com outros componentes (como Pricing.tsx)
 export const CHECKOUT_LINK = CHECKOUT_LINK_EAFC26;
