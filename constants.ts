@@ -17,5 +17,5 @@ export const PLAYERS_IMAGE_URL = "https://iili.io/fvtdt5u.md.png";
 export const WHATSAPP_LINK = "https://wa.me/5511999999999"; // Exemplo
 export const CHECKOUT_LINK = "#checkout";
 
-export const PRODUCT_PRICE_OLD = "89,90";
-export const PRODUCT_PRICE_NEW = "39,90";
+export const PRODUCT_PRICE_OLD = "119,90";
+export const PRODUCT_PRICE_NEW = "59,90";
