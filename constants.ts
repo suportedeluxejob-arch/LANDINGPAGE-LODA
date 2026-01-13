@@ -22,9 +22,9 @@ export const CHECKOUT_LINK = "https://wa.me/5511999999999?text=Olá!%20Quero%20a
 // Dados das versões disponíveis com preços dinâmicos
 export const GAME_VERSIONS = [
   {
-    id: 'ps5',
+    id: 'PS5, PS4, Xbox X|S / One',
     name: 'PS5, PS4, Xbox X|S / One',
-    image: 'https://iili.io/fvDgurN.png',
+    image: 'https://iili.io/fvbfMPf.jpg',
     versions: [
       {
         eaVersion: 'EA FC 26',
@@ -42,8 +42,8 @@ export const GAME_VERSIONS = [
   },
   {
     id: 'PS5, PS4, Xbox X|S / One',
-    name: 'PlayStation 4',
-    image: 'https://iili.io/fvtv041.png',
+    name: 'PS5, PS4, Xbox X|S / One',
+    image: 'https://iili.io/fvbfWF4.jpg',
     versions: [
       {
         eaVersion: 'EA FC 26',
@@ -60,7 +60,7 @@ export const GAME_VERSIONS = [
     ],
   },
   {
-    id: 'xbox',
+    id: 'PS5, PS4, Xbox X|S / One',
     name: 'PS5, PS4, Xbox X|S / One',
     image: 'https://iili.io/fvtv041.png',
     versions: [
