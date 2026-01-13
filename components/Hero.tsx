@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative pt-44 pb-12 lg:pt-32 lg:pb-24 bg-gradient-to-br from-slate-50 to-blue-50/50 overflow-hidden">
+    <section className="relative py-12 lg:py-24 bg-gradient-to-br from-slate-50 to-blue-50/50 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
@@ -172,7 +172,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Image Content - Hero Image */}
-          <div className="relative group hidden lg:block">
+          <div className="relative group block mt-12 lg:mt-0 max-w-xs mx-auto lg:max-w-full">
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
               <img

@@ -29,8 +29,8 @@ function App() {
       </nav>
 
       <main className="flex-grow">
-        <Hero />
         <VslSection />
+        <Hero />
         <Features />
         <TeamShowcase />
         <ClientFeedback />

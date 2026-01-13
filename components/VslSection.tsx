@@ -51,7 +51,7 @@ export const VslSection: React.FC = () => {
   }, [isPlaying]);
 
   return (
-    <section className="py-12 bg-white border-y border-slate-100">
+    <section className="pt-32 pb-12 bg-white border-b border-slate-100">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
