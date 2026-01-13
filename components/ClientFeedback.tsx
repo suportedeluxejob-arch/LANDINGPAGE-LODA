@@ -43,37 +43,38 @@ export const ClientFeedback: React.FC = () => {
         </div>
 
         {/* Carrossel de Feedbacks */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto px-2 sm:px-0">
           <div className="relative group">
-            {/* Container Principal */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white border-2 border-slate-200">
-              <div className="aspect-video lg:aspect-square bg-gradient-to-br from-slate-100 to-blue-50 flex items-center justify-center relative">
+            {/* Container Principal - Responsivo */}
+            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl bg-white border border-sm:border-2 border-slate-200">
+              {/* Imagem com altura flexível em mobile */}
+              <div className="bg-gradient-to-br from-slate-100 to-blue-50 flex items-center justify-center relative" style={{ aspectRatio: 'auto', minHeight: '300px' }}>
                 <img
                   src={CLIENT_FEEDBACKS[currentIndex].image}
                   alt={`Feedback do cliente ${currentIndex + 1}`}
-                  className="w-full h-full object-cover transition-all duration-500 ease-out"
+                  className="w-full h-full object-contain sm:object-cover transition-all duration-500 ease-out p-2 sm:p-0"
                 />
               </div>
 
-              {/* Navigation Arrows */}
+              {/* Navigation Arrows - Melhorados para mobile */}
               <button
                 onClick={handlePrevious}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-slate-900 p-3 rounded-full shadow-lg transition-all duration-200 z-20 hover:scale-110"
+                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-slate-900 p-2 sm:p-3 rounded-full shadow-lg transition-all duration-200 z-20 hover:scale-110"
                 aria-label="Feedback anterior"
               >
-                <ChevronLeft className="w-6 h-6" />
+                <ChevronLeft className="w-4 sm:w-6 h-4 sm:h-6" />
               </button>
 
               <button
                 onClick={handleNext}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-slate-900 p-3 rounded-full shadow-lg transition-all duration-200 z-20 hover:scale-110"
+                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-slate-900 p-2 sm:p-3 rounded-full shadow-lg transition-all duration-200 z-20 hover:scale-110"
                 aria-label="Próximo feedback"
               >
-                <ChevronRight className="w-6 h-6" />
+                <ChevronRight className="w-4 sm:w-6 h-4 sm:h-6" />
               </button>
 
               {/* Dot Indicators */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+              <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-20">
                 {CLIENT_FEEDBACKS.map((_, index) => (
                   <button
                     key={index}
@@ -81,9 +82,9 @@ export const ClientFeedback: React.FC = () => {
                       setCurrentIndex(index);
                       setAutoPlay(false);
                     }}
-                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
                       index === currentIndex
-                        ? 'bg-cyan-500 w-8'
+                        ? 'bg-cyan-500 w-6 sm:w-8'
                         : 'bg-white/60 hover:bg-white'
                     }`}
                     aria-label={`Ir para feedback ${index + 1}`}
@@ -91,8 +92,8 @@ export const ClientFeedback: React.FC = () => {
                 ))}
               </div>
 
-              {/* Contador */}
-              <div className="absolute top-4 right-4 bg-slate-900/80 text-white px-4 py-2 rounded-full text-sm font-bold">
+              {/* Contador - Responsivo */}
+              <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-slate-900/80 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-bold">
                 {currentIndex + 1} / {CLIENT_FEEDBACKS.length}
               </div>
             </div>
@@ -100,18 +101,18 @@ export const ClientFeedback: React.FC = () => {
             {/* Auto-play Toggle */}
             <button
               onClick={() => setAutoPlay(!autoPlay)}
-              className="absolute -bottom-10 right-0 text-sm text-slate-600 hover:text-slate-900 transition-colors font-semibold"
+              className="absolute -bottom-8 sm:-bottom-10 right-0 text-xs sm:text-sm text-slate-600 hover:text-slate-900 transition-colors font-semibold"
             >
               {autoPlay ? '⏸ Autoplay' : '▶ Autoplay'}
             </button>
           </div>
 
           {/* Info texto abaixo */}
-          <div className="text-center mt-12">
-            <p className="text-slate-600 mb-4">
+          <div className="text-center mt-12 sm:mt-14">
+            <p className="text-slate-600 mb-2 sm:mb-4 text-sm sm:text-base">
               Feedback {currentIndex + 1} de {CLIENT_FEEDBACKS.length}
             </p>
-            <p className="text-sm text-slate-500 max-w-2xl mx-auto">
+            <p className="text-xs sm:text-sm text-slate-500 max-w-2xl mx-auto px-2">
               Estes são feedbacks reais de clientes que já atualizaram seus jogos com sucesso.
             </p>
           </div>
