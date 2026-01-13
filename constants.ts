@@ -43,26 +43,7 @@ export const GAME_VERSIONS = [
   {
     id: 'PS5, PS4, Xbox X|S / One',
     name: 'PS5, PS4, Xbox X|S / One',
-    image: 'https://iili.io/fvbfWF4.jpg',
-    versions: [
-      {
-        eaVersion: 'EA FC 26',
-        priceOld: 'R$ 119,90',
-        priceNew: 'R$ 59,90',
-        discount: '-50%',
-      },
-      {
-        eaVersion: 'EA FC 25',
-        priceOld: 'R$ 99,90',
-        priceNew: 'R$ 39,90',
-        discount: '-60%',
-      },
-    ],
-  },
-  {
-    id: 'PS5, PS4, Xbox X|S / One',
-    name: 'PS5, PS4, Xbox X|S / One',
-    image: 'https://iili.io/fvtv041.png',
+    image: 'https://iili.io/fvbMDlf.md.png',
     versions: [
       {
         eaVersion: 'EA FC 26',
