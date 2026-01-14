@@ -69,7 +69,7 @@ export const GAME_VERSIONS = [
   {
     id: 'PS5, PS4, Xbox X|S / One',
     name: 'PS5, PS4, Xbox X|S / One',
-    image: 'https://iili.io/fvbfMPf.jpg',
+    image: 'https://iili.io/fvbfWF4.jpg',
     versions: [
       {
         eaVersion: 'EA FC 26',
