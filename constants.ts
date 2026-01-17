@@ -12,10 +12,12 @@ export const LOGO_URL = "https://iili.io/f8WlKIj.png";
 // Adicione ou remova links de imagem aqui para o carrossel que fica ao lado dos preços.
 // A primeira imagem da lista será a que aparece primeiro.
 export const HERO_CAROUSEL_IMAGES = [
-  "https://iili.io/fSFt95X.md.jpg",
-  "",
-  "", // <--- Recuperei este link único que você enviou antes
-  "h"  // <--- Recuperei este link único que você enviou antes
+  "https://iili.io/fSFt2zG.jpg",
+  "https://iili.io/fSFtJbs.jpg",
+  "https://iili.io/fSFtHen.jpg", // <--- Recuperei este link único que você enviou antes
+  "https://iili.io/fSFt95X.jpg",
+  "https://iili.io/fSFZyJt.jpg",
+  "https://iili.io/fSFZmgI.md.jpg"
 ];
 
 // Imagem fixa (fallback se necessário)
