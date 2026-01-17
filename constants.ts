@@ -57,7 +57,7 @@ export const CLIENT_FEEDBACKS = [
 
 // WhatsApp - Suporte e Atendimento
 // Link com mensagem pré-definida para suporte
-export const WHATSAPP_SUPPORT_LINK = "https://api.whatsapp.com/send/?phone=5521960170781&text=Opa%2C+quero+saber+melhor+sobre+o+Patch+FIFA&type=phone_number&app_absent=0";
+export const WHATSAPP_SUPPORT_LINK = "https://wa.me/5521969839028";
 
 // ========================================
 // 💳 LINKS DE PAGAMENTO PARA CADA VERSÃO
