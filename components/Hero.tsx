@@ -49,6 +49,12 @@ export const Hero: React.FC = () => {
     // 3. Redireciona o usuário para pagar aquele produto específico
 
     const checkoutUrl = currentPrice.checkoutLink;
+    
+    // Rastreamento Meta Pixel
+    if ((window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout');
+    }
+    
     window.location.href = checkoutUrl;
   };
 

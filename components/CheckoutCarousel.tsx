@@ -25,7 +25,7 @@ export const CheckoutCarousel: React.FC = () => {
 
   const handlePrevious = () => {
     setAutoPlay(false);
-    setCurrentIndex((prev) => 
+    setCurrentIndex((prev) =>
       prev === 0 ? GAME_VERSIONS.length - 1 : prev - 1
     );
     setSelectedVersion(0);
@@ -45,6 +45,12 @@ export const CheckoutCarousel: React.FC = () => {
   const handleCheckout = () => {
     const text = `Olá! Quero atualizar meu EA FC ${currentPrice.eaVersion.split(' ')[2]} para ${currentGame.name}. Preço: ${currentPrice.priceNew}`;
     const encodedText = encodeURIComponent(text);
+
+    // Rastreamento Meta Pixel
+    if ((window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout');
+    }
+
     window.location.href = `${CHECKOUT_LINK}&text=${encodedText}`;
   };
 
@@ -97,11 +103,10 @@ export const CheckoutCarousel: React.FC = () => {
                       setSelectedVersion(0);
                       setAutoPlay(false);
                     }}
-                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                      index === currentIndex
+                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === currentIndex
                         ? 'bg-blue-600 w-8'
                         : 'bg-white/60 hover:bg-white'
-                    }`}
+                      }`}
                     aria-label={`Ir para ${GAME_VERSIONS[index].name}`}
                   />
                 ))}
@@ -123,11 +128,10 @@ export const CheckoutCarousel: React.FC = () => {
               <button
                 key={index}
                 onClick={() => handleVersionChange(index)}
-                className={`p-6 rounded-2xl border-2 transition-all duration-300 text-left ${
-                  selectedVersion === index
+                className={`p-6 rounded-2xl border-2 transition-all duration-300 text-left ${selectedVersion === index
                     ? 'border-blue-600 bg-blue-50 shadow-lg'
                     : 'border-slate-200 bg-white hover:border-blue-300 hover:shadow-md'
-                }`}
+                  }`}
               >
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="text-xl font-black text-slate-900">
@@ -167,7 +171,7 @@ export const CheckoutCarousel: React.FC = () => {
                 ✓ Entrega Imediata
               </p>
               <p className="text-xs text-slate-500">
-                Plataforma: <span className="font-bold text-slate-700">{currentGame.name}</span> | 
+                Plataforma: <span className="font-bold text-slate-700">{currentGame.name}</span> |
                 Versão: <span className="font-bold text-slate-700">{currentPrice.eaVersion}</span>
               </p>
             </div>

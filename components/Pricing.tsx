@@ -23,11 +23,19 @@ export const Pricing: React.FC = () => {
               </div>
             </div>
 
-            <a href={CHECKOUT_LINK} className="block w-full max-w-md mx-auto">
-              <Button fullWidth variant="secondary" className="text-lg py-5 shadow-green-500/40 hover:shadow-green-500/50 hover:scale-105 transition-all">
-                COMPRAR AGORA
-              </Button>
-            </a>
+            <Button
+              onClick={() => {
+                if ((window as any).fbq) {
+                  (window as any).fbq('track', 'InitiateCheckout');
+                }
+                window.location.href = CHECKOUT_LINK;
+              }}
+              fullWidth
+              variant="secondary"
+              className="text-lg py-5 shadow-green-500/40 hover:shadow-green-500/50 hover:scale-105 transition-all max-w-md mx-auto block"
+            >
+              COMPRAR AGORA
+            </Button>
 
             <p className="mt-4 text-xs text-slate-400">
               Pagamento único. Acesso vitalício à versão comprada.
