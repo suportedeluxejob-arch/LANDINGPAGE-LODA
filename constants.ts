@@ -68,8 +68,8 @@ export const WHATSAPP_SUPPORT_LINK = "https://api.whatsapp.com/send/?phone=55219
 // O botão "QUERO ATUALIZAR MEU EA FC HOJE" muda automaticamente
 // conforme o usuário seleciona a versão (26 ou 25)
 
-export const CHECKOUT_LINK_EAFC26 = "https://go.invictuspay.app.br/qaatnpzass";
-export const CHECKOUT_LINK_EAFC25 = "https://go.invictuspay.app.br/fuv2ufja8l";
+export const CHECKOUT_LINK_EAFC26 = "https://go.invictuspay.app.br/dh3hctq74r";
+export const CHECKOUT_LINK_EAFC25 = "https://go.invictuspay.app.br/clslptoxk2";
 
 // Padrão para compatibilidade com outros componentes (como Pricing.tsx)
 export const CHECKOUT_LINK = CHECKOUT_LINK_EAFC26;
