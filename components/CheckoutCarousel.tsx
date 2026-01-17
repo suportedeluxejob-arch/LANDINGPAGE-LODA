@@ -10,6 +10,26 @@ export const CheckoutCarousel: React.FC = () => {
 
   const currentGame = GAME_VERSIONS[currentIndex];
   const currentPrice = currentGame.versions[selectedVersion];
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStart === null) return;
+    const touchEnd = e.changedTouches[0].clientX;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrevious();
+    }
+    setTouchStart(null);
+  };
 
   // Auto-play carousel
   useEffect(() => {
@@ -61,7 +81,11 @@ export const CheckoutCarousel: React.FC = () => {
           {/* Carousel Container */}
           <div className="relative mb-12">
             {/* Main Image Container */}
-            <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
+            <div
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+              className="relative bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200 cursor-grab active:cursor-grabbing"
+            >
               <div className="aspect-square lg:aspect-video bg-gradient-to-br from-slate-100 to-blue-50 flex items-center justify-center overflow-hidden relative">
                 {/* Game Image with smooth transition */}
                 <img
@@ -104,8 +128,8 @@ export const CheckoutCarousel: React.FC = () => {
                       setAutoPlay(false);
                     }}
                     className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === currentIndex
-                        ? 'bg-blue-600 w-8'
-                        : 'bg-white/60 hover:bg-white'
+                      ? 'bg-blue-600 w-8'
+                      : 'bg-white/60 hover:bg-white'
                       }`}
                     aria-label={`Ir para ${GAME_VERSIONS[index].name}`}
                   />
@@ -129,8 +153,8 @@ export const CheckoutCarousel: React.FC = () => {
                 key={index}
                 onClick={() => handleVersionChange(index)}
                 className={`p-6 rounded-2xl border-2 transition-all duration-300 text-left ${selectedVersion === index
-                    ? 'border-blue-600 bg-blue-50 shadow-lg'
-                    : 'border-slate-200 bg-white hover:border-blue-300 hover:shadow-md'
+                  ? 'border-blue-600 bg-blue-50 shadow-lg'
+                  : 'border-slate-200 bg-white hover:border-blue-300 hover:shadow-md'
                   }`}
               >
                 <div className="flex items-start justify-between mb-3">

@@ -8,6 +8,28 @@ export const Hero: React.FC = () => {
   const [currentVersionIndex, setCurrentVersionIndex] = useState(0);
   const [currentHeroImageIndex, setCurrentHeroImageIndex] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStart === null) return;
+    const touchEnd = e.changedTouches[0].clientX;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      setCurrentHeroImageIndex((prev) => (prev + 1) % HERO_CAROUSEL_IMAGES.length);
+      setAutoPlay(false);
+    } else if (isRightSwipe) {
+      setCurrentHeroImageIndex((prev) => (prev === 0 ? HERO_CAROUSEL_IMAGES.length - 1 : prev - 1));
+      setAutoPlay(false);
+    }
+    setTouchStart(null);
+  };
 
   const currentPlatform = GAME_VERSIONS[currentPlatformIndex];
   const currentPrice = currentPlatform.versions[currentVersionIndex];
@@ -49,12 +71,12 @@ export const Hero: React.FC = () => {
     // 3. Redireciona o usuário para pagar aquele produto específico
 
     const checkoutUrl = currentPrice.checkoutLink;
-    
+
     // Rastreamento Meta Pixel
     if ((window as any).fbq) {
       (window as any).fbq('track', 'InitiateCheckout');
     }
-    
+
     window.location.href = checkoutUrl;
   };
 
@@ -197,7 +219,11 @@ export const Hero: React.FC = () => {
             </div>
 
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white w-full min-h-[400px] sm:min-h-[500px]">
+            <div
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+              className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white w-full min-h-[400px] sm:min-h-[500px] cursor-grab active:cursor-grabbing"
+            >
               {HERO_CAROUSEL_IMAGES.map((img, index) => (
                 <img
                   key={index}
