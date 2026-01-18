@@ -71,7 +71,7 @@ export const WHATSAPP_SUPPORT_LINK = "https://wa.me/5521969839028";
 // conforme o usuário seleciona a versão (26 ou 25)
 
 export const CHECKOUT_LINK_EAFC26 = "https://go.invictuspay.app.br/2vrxvz38tq";
-export const CHECKOUT_LINK_EAFC25 = "https://go.invictuspay.app.br/clslptoxk2";
+export const CHECKOUT_LINK_EAFC25 = "https://go.invictuspay.app.br/s0h0uifvmd";
 
 // ========================================
 // 🚀 CONFIGURAÇÃO DE UPSELL (R$ 29,90)
