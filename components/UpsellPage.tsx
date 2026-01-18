@@ -36,44 +36,54 @@ export function UpsellPage() {
           animation: pulse-soft 2s infinite ease-in-out;
         }
         
-        /* Estilos fornecidos pela InvictusPay */
+        /* Estilos melhorados para o botão InvictusPay */
         .fornpay_btn {
-            background: #3d94f6;
-            background-image: -webkit-linear-gradient(top, #3d94f6, #1e62d0);
-            background-image: -moz-linear-gradient(top, #3d94f6, #1e62d0);
-            background-image: -ms-linear-gradient(top, #3d94f6, #1e62d0);
-            background-image: -o-linear-gradient(top, #3d94f6, #1e62d0);
-            background-image: -webkit-gradient(to bottom, #3d94f6, #1e62d0);
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            border-radius: 10px;
-            color: #fff;
-            font-family: Arial;
-            font-size: 22px !important;
-            font-weight: 900 !important;
-            padding: 20px 20px;
-            border: 1px solid #337fed;
+            background: #22c55e; /* Verde vibrante */
+            background-image: linear-gradient(to bottom, #22c55e, #16a34a);
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 12px;
+            border-radius: 12px;
+            color: #ffffff;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 20px !important;
+            font-weight: 800 !important;
+            padding: 22px 24px;
+            border: none;
             text-decoration: none;
             display: block;
             cursor: pointer;
             text-align: center;
-            transition: transform 0.2s ease;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 15px -3px rgba(34, 197, 94, 0.4), 0 4px 6px -4px rgba(34, 197, 94, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            position: relative;
+            z-index: 10;
         }
+        
         .fornpay_btn:hover {
-            transform: scale(1.02);
+            transform: translateY(-2px);
+            background: #16a34a;
+            box-shadow: 0 20px 25px -5px rgba(34, 197, 94, 0.4), 0 8px 10px -6px rgba(34, 197, 94, 0.4);
+        }
+
+        .fornpay_btn:active {
+            transform: translateY(1px);
+            filter: brightness(0.9);
         }
 
         .fornpay_downsell {
             color: #94a3b8;
-            font-family: Arial;
-            margin-top: 20px;
+            font-family: 'Inter', system-ui, sans-serif;
+            margin-top: 24px;
             font-size: 14px!important;
-            font-weight: 400;
+            font-weight: 500;
             text-decoration: none;
             display: block;
             cursor: pointer;
             text-align: center;
-            opacity: 0.7;
+            opacity: 0.6;
+            transition: all 0.2s ease;
         }
         .fornpay_downsell:hover {
             opacity: 1;
@@ -84,7 +94,11 @@ export function UpsellPage() {
             {/* Header / Logo */}
             <header className="py-6 flex justify-center border-b border-white/10 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
                 <div className="flex items-center gap-3">
-                    <img src={LOGO_URL} alt="Logo" className="h-10 w-10 rounded-full border border-white/20" />
+                    <img
+                        src={LOGO_URL}
+                        alt="Logo"
+                        className="h-10 w-10 object-contain rounded-full border border-white/20 shadow-inner bg-black/20"
+                    />
                     <span className="font-black text-xl tracking-tighter uppercase">
                         WG<span className="text-cyan-400"> PATCH</span>
                     </span>
