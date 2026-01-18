@@ -3,6 +3,7 @@ import { Check, ShieldAlert, Sparkles, Trophy, ArrowRight } from 'lucide-react';
 import { LOGO_URL, UPSELL_LINK, REJECTION_LINK, UPSELL_IMAGE_URL } from '../constants';
 
 export function UpsellPage() {
+    const [isImageOpen, setIsImageOpen] = React.useState(false);
     // Rastreamento de visualização do Upsell e Injeção do Script OneClick
     useEffect(() => {
         if (window.fbq) {
@@ -36,40 +37,40 @@ export function UpsellPage() {
           animation: pulse-soft 2s infinite ease-in-out;
         }
         
-        /* Estilos melhorados para o botão InvictusPay */
+        /* Estilos melhorados para o botão InvictusPay - SUPER VIBRANTE */
         .fornpay_btn {
-            background: #22c55e; /* Verde vibrante */
-            background-image: linear-gradient(to bottom, #22c55e, #16a34a);
+            background: #22c55e;
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
             -webkit-border-radius: 12px;
             -moz-border-radius: 12px;
             border-radius: 12px;
             color: #ffffff;
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            font-size: 20px !important;
-            font-weight: 800 !important;
-            padding: 22px 24px;
-            border: none;
+            font-size: 22px !important;
+            font-weight: 900 !important;
+            padding: 24px 20px;
+            border: 2px solid rgba(255,255,255,0.4);
             text-decoration: none;
             display: block;
             cursor: pointer;
             text-align: center;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 10px 15px -3px rgba(34, 197, 94, 0.4), 0 4px 6px -4px rgba(34, 197, 94, 0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 0 30px rgba(74, 222, 128, 0.4), 0 10px 40px -10px rgba(0,0,0,0.5);
             text-transform: uppercase;
-            letter-spacing: 0.025em;
+            letter-spacing: 0.05em;
             position: relative;
             z-index: 10;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
         
         .fornpay_btn:hover {
-            transform: translateY(-2px);
-            background: #16a34a;
-            box-shadow: 0 20px 25px -5px rgba(34, 197, 94, 0.4), 0 8px 10px -6px rgba(34, 197, 94, 0.4);
+            transform: scale(1.05);
+            filter: brightness(1.2);
+            box-shadow: 0 0 40px rgba(74, 222, 128, 0.6), 0 20px 50px -15px rgba(0,0,0,0.6);
         }
 
         .fornpay_btn:active {
-            transform: translateY(1px);
-            filter: brightness(0.9);
+            transform: scale(0.96);
         }
 
         .fornpay_downsell {
@@ -105,10 +106,17 @@ export function UpsellPage() {
                 </div>
             </header>
 
+            {/* Modal de Zoom da Imagem */}
+            {isImageOpen && (
+                <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 cursor-zoom-out" onClick={() => setIsImageOpen(false)}>
+                    <img src={UPSELL_IMAGE_URL} className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-300" />
+                </div>
+            )}
+
             <main className="container mx-auto px-4 py-10 max-w-3xl">
                 {/* Atenção - Acima da dobra */}
                 <div className="text-center mb-8">
-                    <div className="inline-flex items-center gap-2 bg-red-500/20 text-red-400 px-4 py-1 rounded-full text-sm font-bold mb-4 border border-red-500/30">
+                    <div className="inline-flex items-center gap-2 bg-red-500/20 text-red-400 px-4 py-1 rounded-full text-xs font-bold mb-4 border border-red-500/30">
                         <ShieldAlert size={16} />
                         ESPERE! NÃO FECHE ESSA PÁGINA!
                     </div>
@@ -125,21 +133,28 @@ export function UpsellPage() {
 
                 {/* Oferta de Upsell */}
                 <div className="bg-slate-800/50 border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden mb-10">
-                    <div className="absolute top-0 right-0 p-4">
-                        <span className="bg-cyan-500 text-slate-900 text-xs font-black px-3 py-1 rounded-bl-xl uppercase tracking-widest">
+                    {/* Badge de Oferta Posicionado Melhor */}
+                    <div className="absolute top-0 right-0 z-20">
+                        <div className="bg-cyan-500 text-slate-900 text-[10px] font-black px-4 py-2 rounded-bl-2xl uppercase tracking-[0.2em] shadow-lg">
                             OFERTA ÚNICA
-                        </span>
+                        </div>
                     </div>
 
                     <div className="flex flex-col gap-8">
                         <div className="space-y-6">
-                            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                            <div
+                                className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl cursor-zoom-in group"
+                                onClick={() => setIsImageOpen(true)}
+                            >
                                 <img
                                     src={UPSELL_IMAGE_URL}
                                     alt="Copa do Mundo 2026 Edition"
-                                    className="w-full h-auto object-cover"
+                                    className="w-full h-auto object-cover transform transition-all duration-500 group-hover:scale-105 group-hover:brightness-110"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                                <div className="absolute inset-x-0 bottom-0 py-3 bg-black/60 backdrop-blur-md text-center text-[11px] font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                    TOQUE PARA VER EM TELA CHEIA
+                                </div>
                             </div>
 
                             <h2 className="text-2xl font-bold flex items-center gap-3">
