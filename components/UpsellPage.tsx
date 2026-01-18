@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Check, ShieldAlert, Sparkles, Trophy, ArrowRight } from 'lucide-react';
-import { LOGO_URL, UPSELL_LINK, REJECTION_LINK } from '../constants';
+import { LOGO_URL, UPSELL_LINK, REJECTION_LINK, UPSELL_IMAGE_URL } from '../constants';
 
 export function UpsellPage() {
     // Rastreamento de visualização do Upsell (opcional, para Pixel)
@@ -41,14 +41,14 @@ export function UpsellPage() {
                         <ShieldAlert size={16} />
                         ESPERE! NÃO FECHE ESSA PÁGINA!
                     </div>
-                    <h1 className="text-3xl md:text-5xl font-black mb-4 leading-tight">
-                        SEU ACESSO ESTÁ QUASE PRONTO... <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                            MAS VOCÊ PODE TER MAIS!
+                    <h1 className="text-3xl md:text-5xl font-black mb-4 leading-tight uppercase">
+                        EDIÇÃO COPA <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-green-500">
+                            MUNDIAL 2026
                         </span>
                     </h1>
-                    <p className="text-slate-400 text-lg md:text-xl font-medium">
-                        Parabéns pela sua compra! Como novo membro da WG PATCH, você acaba de liberar uma oferta exclusiva que nunca mais verá novamente.
+                    <p className="text-slate-400 text-lg md:text-xl font-bold italic">
+                        "Dispute o maior torneio com elencos atualizados das seleções nacionais e a atmosfera oficial."
                     </p>
                 </div>
 
@@ -62,9 +62,18 @@ export function UpsellPage() {
 
                     <div className="flex flex-col gap-8">
                         <div className="space-y-6">
+                            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                                <img
+                                    src={UPSELL_IMAGE_URL}
+                                    alt="Copa do Mundo 2026 Edition"
+                                    className="w-full h-auto object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                            </div>
+
                             <h2 className="text-2xl font-bold flex items-center gap-3">
-                                <Sparkles className="text-cyan-400" />
-                                Dobre o Realismo do seu Jogo
+                                <Trophy className="text-yellow-400" />
+                                O que você recebe nesta edição:
                             </h2>
 
                             <ul className="space-y-4">
@@ -73,8 +82,8 @@ export function UpsellPage() {
                                         <Check size={18} />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-slate-200">Pack de Gramados Ultra Realistas 45K</p>
-                                        <p className="text-sm text-slate-400">Texturas de última geração que fazem você sentir a grama do estádio.</p>
+                                        <p className="font-bold text-slate-200">Elencos 100% Atualizados</p>
+                                        <p className="text-sm text-slate-400">Todas as seleções com convocações reais e uniformes exclusivos.</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start gap-3">
@@ -82,8 +91,8 @@ export function UpsellPage() {
                                         <Check size={18} />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-slate-200">200+ Ícones Lendários Liberados</p>
-                                        <p className="text-sm text-slate-400">Jogue com Pelé, Ronaldinho, Zidane e muito mais com faces escaneadas.</p>
+                                        <p className="font-bold text-slate-200">Estádios e Atmosfera Oficial</p>
+                                        <p className="text-sm text-slate-400">Sinta a emoção do mundial com interface, placares e estádios temáticos.</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start gap-3">
@@ -91,8 +100,8 @@ export function UpsellPage() {
                                         <Check size={18} />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-slate-200">Filtros de Cor Dinâmicos (Presets)</p>
-                                        <p className="text-sm text-slate-400">Deixe seu jogo com visual de transmissão de TV européia em tempo real.</p>
+                                        <p className="font-bold text-slate-200">Troféu e Animações de Campeão</p>
+                                        <p className="text-sm text-slate-400">Levante a taça mais cobiçada do mundo com cinematics inéditas.</p>
                                     </div>
                                 </li>
                             </ul>
@@ -127,7 +136,7 @@ export function UpsellPage() {
                         href={REJECTION_LINK}
                         className="text-slate-500 hover:text-slate-300 text-sm font-medium transition-colors underline underline-offset-4"
                     >
-                        Não, obrigado. Eu prefiro jogar com os gráficos básicos e perder os Ícones Lendários.
+                        Não, obrigado. Eu prefiro continuar sem o conteúdo exclusivo da Copa 2026.
                     </a>
 
                     <div className="flex justify-center items-center gap-6 pt-10 opacity-30 grayscale">

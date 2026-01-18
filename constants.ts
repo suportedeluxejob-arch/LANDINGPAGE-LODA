@@ -76,7 +76,10 @@ export const CHECKOUT_LINK_EAFC25 = "https://go.invictuspay.app.br/s0h0uifvmd";
 // ========================================
 // 🚀 CONFIGURAÇÃO DE UPSELL (R$ 29,90)
 // ========================================
-// Este é o link do checkout do seu produto de UPSELL (Pack Ultra Realismo)
+// Imagem do Upsell (Copa do Mundo 2026)
+export const UPSELL_IMAGE_URL = "/copa2026.jpg";
+
+// Este é o link do checkout do seu produto de UPSELL (Copa 2026)
 export const UPSELL_LINK = "https://go.invictuspay.app.br/INSIRA_AQUI_SEU_LINK_DE_UPSELL";
 
 // Este é o link para onde o cliente vai se ele RECUSAR a oferta
