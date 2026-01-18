@@ -70,8 +70,18 @@ export const WHATSAPP_SUPPORT_LINK = "https://wa.me/5521969839028";
 // O botão "QUERO ATUALIZAR MEU EA FC HOJE" muda automaticamente
 // conforme o usuário seleciona a versão (26 ou 25)
 
-export const CHECKOUT_LINK_EAFC26 = "https://go.invictuspay.app.br/dh3hctq74r";
+export const CHECKOUT_LINK_EAFC26 = "https://go.invictuspay.app.br/2vrxvz38tq";
 export const CHECKOUT_LINK_EAFC25 = "https://go.invictuspay.app.br/clslptoxk2";
+
+// ========================================
+// 🚀 CONFIGURAÇÃO DE UPSELL (R$ 29,90)
+// ========================================
+// Este é o link do checkout do seu produto de UPSELL (Pack Ultra Realismo)
+export const UPSELL_LINK = "https://go.invictuspay.app.br/INSIRA_AQUI_SEU_LINK_DE_UPSELL";
+
+// Este é o link para onde o cliente vai se ele RECUSAR a oferta
+// Geralmente é o seu link de Thank You Page ou o link de Redirecionamento da Gateway
+export const REJECTION_LINK = "https://go.invictuspay.app.br/INSIRA_AQUI_SEU_LINK_DE_RECUSA";
 
 // Padrão para compatibilidade com outros componentes (como Pricing.tsx)
 export const CHECKOUT_LINK = CHECKOUT_LINK_EAFC26;
