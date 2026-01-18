@@ -3,12 +3,25 @@ import { Check, ShieldAlert, Sparkles, Trophy, ArrowRight } from 'lucide-react';
 import { LOGO_URL, UPSELL_LINK, REJECTION_LINK, UPSELL_IMAGE_URL } from '../constants';
 
 export function UpsellPage() {
-    // Rastreamento de visualização do Upsell (opcional, para Pixel)
+    // Rastreamento de visualização do Upsell e Injeção do Script OneClick
     useEffect(() => {
         if (window.fbq) {
-            window.fbq('track', 'ViewContent', { content_name: 'Upsell Ultra Realism', value: 29.90, currency: 'BRL' });
+            window.fbq('track', 'ViewContent', { content_name: 'Upsell Copa 2026', value: 29.90, currency: 'BRL' });
         }
         window.scrollTo(0, 0);
+
+        // Injeção do Script InvictusPay OneClick
+        const script = document.createElement('script');
+        script.src = "https://app.invictuspay.app.br/js/oneclick.js";
+        script.async = true;
+        document.body.appendChild(script);
+
+        return () => {
+            // Remove o script se sair da página
+            if (document.body.contains(script)) {
+                document.body.removeChild(script);
+            }
+        };
     }, []);
 
     return (
@@ -21,6 +34,50 @@ export function UpsellPage() {
         }
         .animate-pulse-soft {
           animation: pulse-soft 2s infinite ease-in-out;
+        }
+        
+        /* Estilos fornecidos pela InvictusPay */
+        .fornpay_btn {
+            background: #3d94f6;
+            background-image: -webkit-linear-gradient(top, #3d94f6, #1e62d0);
+            background-image: -moz-linear-gradient(top, #3d94f6, #1e62d0);
+            background-image: -ms-linear-gradient(top, #3d94f6, #1e62d0);
+            background-image: -o-linear-gradient(top, #3d94f6, #1e62d0);
+            background-image: -webkit-gradient(to bottom, #3d94f6, #1e62d0);
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            color: #fff;
+            font-family: Arial;
+            font-size: 22px !important;
+            font-weight: 900 !important;
+            padding: 20px 20px;
+            border: 1px solid #337fed;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+        .fornpay_btn:hover {
+            transform: scale(1.02);
+        }
+
+        .fornpay_downsell {
+            color: #94a3b8;
+            font-family: Arial;
+            margin-top: 20px;
+            font-size: 14px!important;
+            font-weight: 400;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+            text-align: center;
+            opacity: 0.7;
+        }
+        .fornpay_downsell:hover {
+            opacity: 1;
+            text-decoration: underline;
         }
       `}</style>
 
@@ -120,24 +177,22 @@ export function UpsellPage() {
                         </div>
 
                         {/* CTA Button */}
-                        <a
-                            href={UPSELL_LINK}
-                            className="bg-green-500 hover:bg-green-600 text-white py-6 rounded-2xl text-xl font-black text-center transition-all flex items-center justify-center gap-3 shadow-lg shadow-green-500/20 animate-pulse-soft"
-                        >
-                            SIM! ADICIONAR AO MEU PEDIDO POR R$ 29,90
-                            <ArrowRight />
-                        </a>
+                        {/* Botões One-Click da InvictusPay */}
+                        <div className="flex flex-col items-center gap-4 py-4">
+                            <div className="w-full max-w-[400px]">
+                                <a href="javascript:void(0)" data-fornpay="zucl3yk3k7" className="fornpay_btn animate-pulse-soft">
+                                    SIM! EU ACEITO ESSA OFERTA
+                                </a>
+                                <a href="javascript:void(0)" data-downsell="null" className="fornpay_downsell">
+                                    Não, obrigado. Prefiro recusar essa oferta especial.
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                {/* Rejection Link */}
+                {/* Garantia e Segurança */}
                 <div className="text-center space-y-4">
-                    <a
-                        href={REJECTION_LINK}
-                        className="text-slate-500 hover:text-slate-300 text-sm font-medium transition-colors underline underline-offset-4"
-                    >
-                        Não, obrigado. Eu prefiro continuar sem o conteúdo exclusivo da Copa 2026.
-                    </a>
 
                     <div className="flex justify-center items-center gap-6 pt-10 opacity-30 grayscale">
                         <Trophy size={40} />
