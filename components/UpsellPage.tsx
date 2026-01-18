@@ -37,58 +37,60 @@ export function UpsellPage() {
           animation: pulse-soft 2s infinite ease-in-out;
         }
         
-        /* Estilos melhorados para o botão InvictusPay - SUPER VIBRANTE */
+        /* Botão InvictusPay - ULTRA NEON & ALTA CONVERSÃO */
         .fornpay_btn {
             background: #22c55e;
-            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
-            -webkit-border-radius: 12px;
-            -moz-border-radius: 12px;
-            border-radius: 12px;
-            color: #ffffff;
+            background: linear-gradient(180deg, #5eff82 0%, #16a34a 100%);
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            color: #ffffff !important;
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            font-size: 22px !important;
+            font-size: 24px !important;
             font-weight: 900 !important;
-            padding: 24px 20px;
-            border: 2px solid rgba(255,255,255,0.4);
+            padding: 26px 20px;
+            border: none;
             text-decoration: none;
             display: block;
             cursor: pointer;
             text-align: center;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 0 30px rgba(74, 222, 128, 0.4), 0 10px 40px -10px rgba(0,0,0,0.5);
+            box-shadow: 0 0 40px rgba(94, 255, 130, 0.5), 0 15px 35px -5px rgba(0,0,0,0.6);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.03em;
             position: relative;
             z-index: 10;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+            border-top: 2px solid rgba(255,255,255,0.6); /* Brilho no topo */
         }
         
         .fornpay_btn:hover {
-            transform: scale(1.05);
+            transform: scale(1.04) translateY(-2px);
             filter: brightness(1.2);
-            box-shadow: 0 0 40px rgba(74, 222, 128, 0.6), 0 20px 50px -15px rgba(0,0,0,0.6);
+            box-shadow: 0 0 60px rgba(94, 255, 130, 0.7), 0 25px 45px -10px rgba(0,0,0,0.7);
         }
 
         .fornpay_btn:active {
             transform: scale(0.96);
+            filter: brightness(0.9);
         }
 
         .fornpay_downsell {
-            color: #94a3b8;
+            color: #ffffff;
             font-family: 'Inter', system-ui, sans-serif;
-            margin-top: 24px;
-            font-size: 14px!important;
+            margin-top: 30px;
+            font-size: 15px!important;
             font-weight: 500;
-            text-decoration: none;
+            text-decoration: underline;
             display: block;
             cursor: pointer;
             text-align: center;
-            opacity: 0.6;
+            opacity: 0.5;
             transition: all 0.2s ease;
         }
         .fornpay_downsell:hover {
             opacity: 1;
-            text-decoration: underline;
+            transform: scale(1.05);
         }
       `}</style>
 
