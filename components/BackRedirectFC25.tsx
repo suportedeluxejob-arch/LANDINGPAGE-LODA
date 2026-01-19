@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { AlertTriangle, Zap, Clock, ShieldAlert, ArrowRight } from 'lucide-react';
-import { LOGO_URL, BACK_REDIRECT_FC25_PRICE, BACK_REDIRECT_FC25_LINK } from '../constants';
+import { Zap, Clock, ShieldCheck, ChevronRight, CheckCircle2, Star, DownloadCloud, Lock } from 'lucide-react';
+import { LOGO_URL, BACK_REDIRECT_FC25_PRICE, BACK_REDIRECT_FC25_LINK, BACK_REDIRECT_TITLE, BACK_REDIRECT_SUBTITLE, BACK_REDIRECT_FC25_IMAGE } from '../constants';
 
 const BackRedirectFC25: React.FC = () => {
-    const [timeLeft, setTimeLeft] = useState(300); // Only 5 minutes for FC25
+    const [timeLeft, setTimeLeft] = useState(300); // 5 minutes (05:00)
 
     useEffect(() => {
         const timer = setInterval(() => setTimeLeft(prev => (prev > 0 ? prev - 1 : 0)), 1000);
@@ -17,81 +17,206 @@ const BackRedirectFC25: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen bg-[#070000] text-white flex flex-col items-center justify-center p-4 font-sans selection:bg-red-600 selection:text-white">
-            {/* Background Decor */}
+        <div className="min-h-screen bg-[#020617] text-white selection:bg-red-600 selection:text-white">
+            {/* Dynamic Background */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-900/10 rounded-full blur-[150px] animate-pulse"></div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-red-900/20 via-red-900/5 to-transparent"></div>
+                <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-red-600/10 rounded-full blur-[120px]"></div>
+                <div className="absolute top-[20%] -right-[10%] w-[30%] h-[50%] bg-red-600/10 rounded-full blur-[120px]"></div>
             </div>
 
-            <main className="relative z-10 max-w-xl w-full">
-                {/* Urgent Alert Header */}
-                <div className="bg-red-600 text-white py-3 px-6 rounded-t-3xl text-center font-black text-sm tracking-[0.2em] flex items-center justify-center gap-3 animate-pulse">
-                    <AlertTriangle className="w-5 h-5 fill-white text-red-600" /> SISTEMA DE SAÍDA BLOQUEADO <AlertTriangle className="w-5 h-5 fill-white text-red-600" />
-                </div>
-
-                <div className="bg-zinc-900 border-x-2 border-b-2 border-red-600/50 rounded-b-3xl p-8 shadow-[0_30px_60px_rgba(220,38,38,0.2)]">
-                    <div className="mb-8 flex justify-center">
-                        <img src={LOGO_URL} alt="Logo" className="h-8 grayscale brightness-200" />
+            <nav className="relative z-20 py-6 border-b border-white/5 backdrop-blur-md sticky top-0">
+                <div className="container mx-auto px-4 flex flex-col items-center gap-4">
+                    <img src={LOGO_URL} alt="Logo" className="h-8 md:h-10 brightness-200" />
+                    <div className="flex items-center gap-2 bg-red-600/10 border border-red-500/20 px-4 py-2 rounded-full">
+                        <Clock className="w-4 h-4 text-red-500" />
+                        <span className="text-[10px] md:text-xs font-black font-mono text-red-500 tabular-nums uppercase">OFERTA EXPIRA EM: {formatTime(timeLeft)}</span>
                     </div>
+                </div>
+            </nav>
 
-                    <h1 className="text-4xl md:text-6xl font-black text-center mb-6 leading-none italic tracking-tighter">
-                        PARE TUDO! <br />
-                        <span className="text-red-500 not-italic">NÃO VÁ EMBORA!</span>
-                    </h1>
+            <main className="relative z-10 container mx-auto px-4 py-10 lg:py-16">
+                <div className="max-w-6xl mx-auto">
 
-                    <div className="bg-red-500/10 border-l-4 border-red-600 p-6 mb-8">
-                        <p className="text-white font-bold text-lg mb-2">ERRO NO PAGAMENTO?</p>
-                        <p className="text-zinc-400 text-sm leading-relaxed">
-                            Nós liberamos uma <span className="text-white underline">contingência especial</span> para você. Não queremos que você fique de fora por causa de preço. Esta é a oferta final e definitiva.
+                    {/* Header Section */}
+                    <div className="text-center mb-12">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-600/10 border border-red-500/30 text-red-400 text-[10px] font-black uppercase tracking-[0.2em] mb-6">
+                            <Star className="w-3 h-3 fill-current" /> Condição Exclusiva de Desistência
+                        </div>
+                        <h1 className="text-4xl md:text-7xl font-black mb-6 leading-tight tracking-tighter">
+                            {BACK_REDIRECT_TITLE}
+                        </h1>
+                        <p className="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                            {BACK_REDIRECT_SUBTITLE}
                         </p>
                     </div>
 
-                    {/* Offer Card */}
-                    <div className="border-2 border-dashed border-zinc-700 rounded-2xl p-6 mb-8 text-center bg-zinc-800/30">
-                        <h3 className="text-zinc-500 font-bold uppercase text-xs tracking-widest mb-2">Liberação Única: EA FC 25</h3>
-                        <div className="flex flex-col items-center">
-                            <span className="text-zinc-600 line-through font-bold">R$ 99,90</span>
-                            <div className="text-6xl font-black text-red-500 flex items-start mt-1">
-                                <span className="text-2xl mt-2 mr-1">R$</span> {BACK_REDIRECT_FC25_PRICE.replace('R$', '').trim()}
-                            </div>
-                            <div className="mt-4 inline-flex items-center gap-2 bg-red-600 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter">
-                                <Clock className="w-3 h-3" /> Link Expira em: {formatTime(timeLeft)}
-                            </div>
-                        </div>
-                    </div>
+                    <div className="grid lg:grid-cols-12 gap-10 items-start">
 
-                    {/* CTA Button */}
-                    <a
-                        href={BACK_REDIRECT_FC25_LINK}
-                        className="group relative block w-full bg-red-600 hover:bg-red-500 text-white font-black text-xl md:text-2xl py-6 rounded-2xl text-center transition-all duration-300 shadow-[0_0_50px_rgba(220,38,38,0.5)] transform hover:scale-[1.05] active:scale-[0.95]"
-                    >
-                        <span className="relative z-10 flex items-center justify-center gap-3">
-                            QUERO GARANTIR AGORA <ArrowRight className="w-6 h-6 animate-bounce-x" />
-                        </span>
-                    </a>
+                        {/* Image Column - Significantly Larger */}
+                        <div className="lg:col-span-7 group">
+                            <div className="relative">
+                                <div className="absolute -inset-1 bg-gradient-to-r from-red-500 to-orange-500 rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                                <div className="relative rounded-[1.5rem] overflow-hidden border border-white/10 shadow-3xl bg-slate-900">
+                                    <img
+                                        src={BACK_REDIRECT_FC25_IMAGE}
+                                        alt="Pacote Definitivo EA FC 25"
+                                        className="w-full h-auto object-cover"
+                                    />
+                                </div>
+                            </div>
+                        </div>
 
-                    <div className="mt-8 flex flex-col items-center gap-4 text-zinc-500 font-bold text-[10px] uppercase">
-                        <div className="flex items-center gap-2">
-                            <ShieldAlert className="w-4 h-4 text-red-500" /> OFERTA VÁLIDA SOMENTE NESTA SESSÃO
+                        {/* Pricing and Action Column */}
+                        <div className="lg:col-span-5 sticky top-28">
+                            <div className="bg-slate-900/80 border border-white/10 rounded-[2rem] p-8 md:p-10 backdrop-blur-xl shadow-2xl">
+
+                                <div className="mb-8">
+                                    <span className="text-slate-500 text-xs font-black uppercase tracking-widest block mb-1">PRODUTO SELECIONADO</span>
+                                    <h3 className="text-2xl font-black text-white">Patch EA FC 25: Pacote Global</h3>
+                                </div>
+
+                                {/* Price Display */}
+                                <div className="mb-8 p-6 bg-red-600/5 rounded-2xl border border-red-500/10">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <span className="text-slate-500 line-through text-sm font-bold">R$ 99,90</span>
+                                        <span className="bg-green-600/20 text-green-500 text-[10px] font-black px-2 py-1 rounded-md">ECONOMIA DE 70%</span>
+                                    </div>
+                                    <div className="flex items-baseline gap-2">
+                                        <span className="text-6xl font-black text-white">{BACK_REDIRECT_FC25_PRICE}</span>
+                                    </div>
+                                    <p className="text-red-400 text-xs font-bold mt-2 uppercase flex items-center gap-2">
+                                        <DownloadCloud className="w-4 h-4" /> Acesso Imediato após aprovação
+                                    </p>
+                                </div>
+
+                                {/* Course-style Deliverables */}
+                                <div className="mb-8">
+                                    <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-4 flex items-center gap-2">
+                                        <DownloadCloud className="w-4 h-4 text-red-500" /> Conteúdo do Pacote
+                                    </h3>
+
+                                    <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+                                        {/* Module Header */}
+                                        <div className="bg-red-600/10 p-4 border-b border-white/5 flex items-center justify-between">
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                                                <span className="text-red-400 font-black text-xs uppercase tracking-widest">LIBERAÇÃO IMEDIATA PÓS-COMPRA</span>
+                                            </div>
+                                            <ChevronRight className="w-4 h-4 text-red-400 rotate-90" />
+                                        </div>
+
+                                        {/* Lessons/Files */}
+                                        <div className="divide-y divide-white/5 transition-all">
+                                            <div className="p-3 md:p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
+                                                <div className="flex items-center gap-2 md:gap-3">
+                                                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-red-600/10 border border-red-500/20 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                                                        <DownloadCloud className="w-4 h-4 md:w-5 md:h-5 text-red-400" />
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="text-[13px] md:text-sm font-black text-slate-100 uppercase tracking-tight">Instalador Automático + Patch</h4>
+                                                        <p className="text-[9px] md:text-[10px] text-slate-500 font-bold">Arquivo Exclusivo • 215 MB</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex flex-col items-end gap-1 flex-shrink-0">
+                                                    <div className="flex items-center gap-1 px-1.5 md:px-2 py-1 rounded bg-red-500/10 border border-red-500/20">
+                                                        <Lock className="w-2.5 h-2.5 md:w-3 md:h-3 text-red-500" />
+                                                        <span className="text-[7px] md:text-[8px] font-black text-red-500 uppercase tracking-tighter">BLOQUEADO</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className="p-3 md:p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
+                                                <div className="flex items-center gap-2 md:gap-3">
+                                                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-red-600/10 border border-red-500/20 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                                                        <div className="w-0 h-0 border-t-[5px] md:border-t-[6px] border-t-transparent border-l-[8px] md:border-l-[10px] border-l-red-500 border-b-[5px] md:border-b-[6px] border-b-transparent ml-1"></div>
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="text-[13px] md:text-sm font-black text-slate-100 uppercase tracking-tight">Tutorial de Instalação e Ativação</h4>
+                                                        <p className="text-[9px] md:text-[10px] text-slate-500 font-bold">Vídeo Aula • 03:45</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex flex-col items-end gap-1 flex-shrink-0">
+                                                    <div className="flex items-center gap-1 px-1.5 md:px-2 py-1 rounded bg-red-500/10 border border-red-500/20">
+                                                        <Lock className="w-2.5 h-2.5 md:w-3 md:h-3 text-red-500" />
+                                                        <span className="text-[7px] md:text-[8px] font-black text-red-500 uppercase tracking-tighter">BLOQUEADO</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className="p-3 md:p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
+                                                <div className="flex items-center gap-2 md:gap-3">
+                                                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-red-600/10 border border-red-500/20 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                                                        <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-red-500" />
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="text-[13px] md:text-sm font-black text-slate-100 uppercase tracking-tight">Times Brasileiros (Séries A & B)</h4>
+                                                        <p className="text-[9px] md:text-[10px] text-slate-500 font-bold">Banco de Dados • Atualizado</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex flex-col items-end gap-1 flex-shrink-0">
+                                                    <div className="flex items-center gap-1 px-1.5 md:px-2 py-1 rounded bg-red-500/10 border border-red-500/20">
+                                                        <Lock className="w-2.5 h-2.5 md:w-3 md:h-3 text-red-500" />
+                                                        <span className="text-[7px] md:text-[8px] font-black text-red-500 uppercase tracking-tighter">BLOQUEADO</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Immediate Access Footer */}
+                                        <div className="bg-black/20 p-3 text-center border-t border-white/5">
+                                            <span className="text-[10px] font-black text-red-400 uppercase tracking-widest">Acesso Imediato Liberado após Confirmação</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a
+                                    href={BACK_REDIRECT_FC25_LINK}
+                                    className="group relative flex items-center justify-center w-full bg-white text-slate-950 font-black text-lg md:text-2xl py-5 md:py-6 px-4 rounded-2xl transition-all duration-300 shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:scale-[1.02] active:scale-[0.98] overflow-hidden text-center"
+                                >
+                                    <span className="relative z-10 flex items-center justify-center gap-2 md:gap-3 leading-tight">
+                                        GARANTIR ACESSO TOTAL <ChevronRight className="w-5 h-5 md:w-6 md:h-6 transform group-hover:translate-x-1 flex-shrink-0" />
+                                    </span>
+                                    <div className="absolute inset-x-0 bottom-0 h-1.5 bg-slate-200"></div>
+                                </a>
+
+                                <div className="mt-8 pt-8 border-t border-white/5 space-y-4">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center">
+                                            <ShieldCheck className="w-5 h-5 text-green-500" />
+                                        </div>
+                                        <div>
+                                            <h4 className="text-sm font-bold">Compra 100% Protegida</h4>
+                                            <p className="text-xs text-slate-500 font-medium">Gateway de pagamento criptografada.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Trust badges footer */}
+                            <div className="mt-8 flex items-center justify-center gap-6 opacity-30 grayscale">
+                                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Visa</span>
+                                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Mastercard</span>
+                                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Pix</span>
+                                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">PayPal</span>
+                            </div>
                         </div>
-                        <div className="w-full h-px bg-zinc-800"></div>
-                        <div className="flex items-center gap-6">
-                            <span className="flex items-center gap-1"><Zap className="w-3 h-3" /> Pix</span>
-                            <span className="flex items-center gap-1"><Zap className="w-3 h-3" /> Cartão</span>
-                            <span className="flex items-center gap-1"><Zap className="w-3 h-3" /> Acesso On-time</span>
-                        </div>
+
                     </div>
                 </div>
             </main>
 
+            <footer className="relative z-10 py-12 border-t border-white/5">
+                <div className="container mx-auto px-4 text-center">
+                    <p className="text-slate-600 text-[10px] uppercase font-bold tracking-[0.2em] max-w-2xl mx-auto">
+                        Ao sair desta página, esta oferta única e exclusiva baseada no seu interesse atual será revogada por tempo indeterminado.
+                    </p>
+                </div>
+            </footer>
+
             <style dangerouslySetInnerHTML={{
                 __html: `
-        @keyframes bounce-x {
-          0%, 100% { transform: translateX(0); }
-          50% { transform: translateX(5px); }
-        }
-        .animate-bounce-x { animation: bounce-x 0.6s infinite; }
-        body { background-color: #070000; }
+        body { background-color: #020617; }
       `}} />
         </div>
     );
