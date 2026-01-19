@@ -3,7 +3,7 @@ import { Zap, Clock, ShieldCheck, ChevronRight, CheckCircle2, Star, DownloadClou
 import { LOGO_URL, BACK_REDIRECT_FC26_PRICE, BACK_REDIRECT_FC26_LINK, BACK_REDIRECT_TITLE, BACK_REDIRECT_SUBTITLE, BACK_REDIRECT_FC26_IMAGE } from '../constants';
 
 const BackRedirectFC26: React.FC = () => {
-    const [timeLeft, setTimeLeft] = useState(600);
+    const [timeLeft, setTimeLeft] = useState(300); // 5 minutes (05:00)
 
     useEffect(() => {
         const timer = setInterval(() => setTimeLeft(prev => (prev > 0 ? prev - 1 : 0)), 1000);
@@ -19,7 +19,7 @@ const BackRedirectFC26: React.FC = () => {
     const features = [
         "Todos os Times do Brasileirão (Série A & B)",
         "Contratações e Elencos 100% Atualizados",
-        "Ligas Europeias (La Liga, Premier League, etc)",
+        "Ligas Europeias (La Liga)",
         "Novos Estádios e Faces Realistas",
         "Kits e Uniformes Temporada 2026",
         "Suporte e Atualizações Automáticas"
@@ -35,11 +35,11 @@ const BackRedirectFC26: React.FC = () => {
             </div>
 
             <nav className="relative z-20 py-6 border-b border-white/5 backdrop-blur-md sticky top-0">
-                <div className="container mx-auto px-4 flex justify-between items-center">
+                <div className="container mx-auto px-4 flex flex-col items-center gap-4">
                     <img src={LOGO_URL} alt="Logo" className="h-8 md:h-10 brightness-200" />
                     <div className="flex items-center gap-2 bg-red-600/10 border border-red-500/20 px-4 py-2 rounded-full">
                         <Clock className="w-4 h-4 text-red-500" />
-                        <span className="text-xs font-black font-mono text-red-500 tabular-nums">OFERTA EXPIRA EM: {formatTime(timeLeft)}</span>
+                        <span className="text-[10px] md:text-xs font-black font-mono text-red-500 tabular-nums uppercase">OFERTA EXPIRA EM: {formatTime(timeLeft)}</span>
                     </div>
                 </div>
             </nav>
@@ -121,10 +121,10 @@ const BackRedirectFC26: React.FC = () => {
 
                                 <a
                                     href={BACK_REDIRECT_FC26_LINK}
-                                    className="group relative flex items-center justify-center w-full bg-white text-slate-950 font-black text-xl md:text-2xl py-6 rounded-2xl transition-all duration-300 shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:scale-[1.02] active:scale-[0.98] overflow-hidden"
+                                    className="group relative flex items-center justify-center w-full bg-white text-slate-950 font-black text-lg md:text-2xl py-5 md:py-6 px-4 rounded-2xl transition-all duration-300 shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:scale-[1.02] active:scale-[0.98] overflow-hidden text-center"
                                 >
-                                    <span className="relative z-10 flex items-center gap-3">
-                                        GARANTIR ACESSO TOTAL <ChevronRight className="w-6 h-6 transform group-hover:translate-x-1" />
+                                    <span className="relative z-10 flex items-center justify-center gap-2 md:gap-3 leading-tight">
+                                        GARANTIR ACESSO TOTAL <ChevronRight className="w-5 h-5 md:w-6 md:h-6 transform group-hover:translate-x-1 flex-shrink-0" />
                                     </span>
                                     <div className="absolute inset-x-0 bottom-0 h-1.5 bg-slate-200"></div>
                                 </a>
