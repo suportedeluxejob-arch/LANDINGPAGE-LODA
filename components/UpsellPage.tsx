@@ -203,14 +203,21 @@ export function UpsellPage() {
                             </p>
                         </div>
 
-                        {/* CTA Button */}
                         {/* Botões One-Click da InvictusPay */}
                         <div className="flex flex-col items-center gap-4 py-4">
                             <div className="w-full max-w-[400px]">
-                                <a href="javascript:void(0)" data-fornpay="zucl3yk3k7" className="fornpay_btn animate-pulse-soft">
+                                <a
+                                    href={UPSELL_LINK}
+                                    data-fornpay="zucl3yk3k7"
+                                    className="fornpay_btn animate-pulse-soft"
+                                >
                                     SIM! EU ACEITO ESSA OFERTA
                                 </a>
-                                <a href="javascript:void(0)" data-downsell="null" className="fornpay_downsell">
+                                <a
+                                    href={REJECTION_LINK || "/"}
+                                    data-downsell="null"
+                                    className="fornpay_downsell"
+                                >
                                     Não, obrigado. Prefiro recusar essa oferta especial.
                                 </a>
                             </div>

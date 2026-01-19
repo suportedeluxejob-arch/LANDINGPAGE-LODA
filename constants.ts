@@ -80,7 +80,7 @@ export const CHECKOUT_LINK_EAFC25 = "https://go.invictuspay.app.br/s0h0uifvmd";
 export const UPSELL_IMAGE_URL = "/copa2026.jpg";
 
 // Este é o link do checkout do seu produto de UPSELL (Copa 2026)
-export const UPSELL_LINK = "https://go.invictuspay.app.br/upsell";
+export const UPSELL_LINK = "https://go.invictuspay.app.br/jbx98ydahm";
 
 // Este é o link para onde o cliente vai se ele RECUSAR a oferta
 // Geralmente é o seu link de Thank You Page ou o link de Redirecionamento da Gateway
