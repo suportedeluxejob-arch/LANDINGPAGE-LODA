@@ -118,74 +118,74 @@ const BackRedirectFC26: React.FC = () => {
 
                                         {/* Lessons/Files */}
                                         <div className="divide-y divide-white/5 transition-all">
-                                            <div className="p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
-                                                <div className="flex items-center gap-3">
-                                                    <div className="w-10 h-10 rounded-xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                                        <DownloadCloud className="w-5 h-5 text-blue-400" />
+                                            <div className="p-3 md:p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
+                                                <div className="flex items-center gap-2 md:gap-3">
+                                                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                                                        <DownloadCloud className="w-4 h-4 md:w-5 md:h-5 text-blue-400" />
                                                     </div>
                                                     <div>
-                                                        <h4 className="text-sm font-black text-slate-100 uppercase tracking-tight">Instalador Automático + Patch</h4>
-                                                        <p className="text-[10px] text-slate-500 font-bold">Arquivo Exclusivo • 2.4 GB</p>
+                                                        <h4 className="text-[13px] md:text-sm font-black text-slate-100 uppercase tracking-tight">Instalador Automático + Patch</h4>
+                                                        <p className="text-[9px] md:text-[10px] text-slate-500 font-bold">Arquivo Exclusivo • 215 MB</p>
                                                     </div>
                                                 </div>
-                                                <div className="flex flex-col items-end gap-1">
-                                                    <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-red-500/10 border border-red-500/20">
-                                                        <Lock className="w-3 h-3 text-red-500" />
-                                                        <span className="text-[8px] font-black text-red-500 uppercase tracking-tighter">BLOQUEADO</span>
+                                                <div className="flex flex-col items-end gap-1 flex-shrink-0">
+                                                    <div className="flex items-center gap-1 px-1.5 md:px-2 py-1 rounded bg-red-500/10 border border-red-500/20">
+                                                        <Lock className="w-2.5 h-2.5 md:w-3 md:h-3 text-red-500" />
+                                                        <span className="text-[7px] md:text-[8px] font-black text-red-500 uppercase tracking-tighter">BLOQUEADO</span>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div className="p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
-                                                <div className="flex items-center gap-3">
-                                                    <div className="w-10 h-10 rounded-xl bg-red-600/10 border border-red-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                                        <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-red-500 border-b-[6px] border-b-transparent ml-1"></div>
+                                            <div className="p-3 md:p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
+                                                <div className="flex items-center gap-2 md:gap-3">
+                                                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-red-600/10 border border-red-500/20 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                                                        <div className="w-0 h-0 border-t-[5px] md:border-t-[6px] border-t-transparent border-l-[8px] md:border-l-[10px] border-l-red-500 border-b-[5px] md:border-b-[6px] border-b-transparent ml-1"></div>
                                                     </div>
                                                     <div>
-                                                        <h4 className="text-sm font-black text-slate-100 uppercase tracking-tight">Tutorial de Instalação e Ativação</h4>
-                                                        <p className="text-[10px] text-slate-500 font-bold">Vídeo Aula • 03:45</p>
+                                                        <h4 className="text-[13px] md:text-sm font-black text-slate-100 uppercase tracking-tight">Tutorial de Instalação e Ativação</h4>
+                                                        <p className="text-[9px] md:text-[10px] text-slate-500 font-bold">Vídeo Aula • 03:45</p>
                                                     </div>
                                                 </div>
-                                                <div className="flex flex-col items-end gap-1">
-                                                    <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-red-500/10 border border-red-500/20">
-                                                        <Lock className="w-3 h-3 text-red-500" />
-                                                        <span className="text-[8px] font-black text-red-500 uppercase tracking-tighter">BLOQUEADO</span>
+                                                <div className="flex flex-col items-end gap-1 flex-shrink-0">
+                                                    <div className="flex items-center gap-1 px-1.5 md:px-2 py-1 rounded bg-red-500/10 border border-red-500/20">
+                                                        <Lock className="w-2.5 h-2.5 md:w-3 md:h-3 text-red-500" />
+                                                        <span className="text-[7px] md:text-[8px] font-black text-red-500 uppercase tracking-tighter">BLOQUEADO</span>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div className="p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
-                                                <div className="flex items-center gap-3">
-                                                    <div className="w-10 h-10 rounded-xl bg-green-600/10 border border-green-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                                        <CheckCircle2 className="w-5 h-5 text-green-500" />
+                                            <div className="p-3 md:p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
+                                                <div className="flex items-center gap-2 md:gap-3">
+                                                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-green-600/10 border border-green-500/20 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                                                        <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-green-500" />
                                                     </div>
                                                     <div>
-                                                        <h4 className="text-sm font-black text-slate-100 uppercase tracking-tight">Times Brasileiros (Séries A & B)</h4>
-                                                        <p className="text-[10px] text-slate-500 font-bold">Banco de Dados • Atualizado</p>
+                                                        <h4 className="text-[13px] md:text-sm font-black text-slate-100 uppercase tracking-tight">Times Brasileiros (Séries A & B)</h4>
+                                                        <p className="text-[9px] md:text-[10px] text-slate-500 font-bold">Banco de Dados • Atualizado</p>
                                                     </div>
                                                 </div>
-                                                <div className="flex flex-col items-end gap-1">
-                                                    <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-red-500/10 border border-red-500/20">
-                                                        <Lock className="w-3 h-3 text-red-500" />
-                                                        <span className="text-[8px] font-black text-red-500 uppercase tracking-tighter">BLOQUEADO</span>
+                                                <div className="flex flex-col items-end gap-1 flex-shrink-0">
+                                                    <div className="flex items-center gap-1 px-1.5 md:px-2 py-1 rounded bg-red-500/10 border border-red-500/20">
+                                                        <Lock className="w-2.5 h-2.5 md:w-3 md:h-3 text-red-500" />
+                                                        <span className="text-[7px] md:text-[8px] font-black text-red-500 uppercase tracking-tighter">BLOQUEADO</span>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div className="p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
-                                                <div className="flex items-center gap-3">
-                                                    <div className="w-10 h-10 rounded-xl bg-amber-600/10 border border-amber-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                                        <CheckCircle2 className="w-5 h-5 text-amber-500" />
+                                            <div className="p-3 md:p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
+                                                <div className="flex items-center gap-2 md:gap-3">
+                                                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-amber-600/10 border border-amber-500/20 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                                                        <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-amber-500" />
                                                     </div>
                                                     <div>
-                                                        <h4 className="text-sm font-black text-slate-100 uppercase tracking-tight">Liga Europeia (La Liga)</h4>
-                                                        <p className="text-[10px] text-slate-500 font-bold">Base Europeia • Temporada 2026</p>
+                                                        <h4 className="text-[13px] md:text-sm font-black text-slate-100 uppercase tracking-tight">Liga Europeia (La Liga)</h4>
+                                                        <p className="text-[9px] md:text-[10px] text-slate-500 font-bold">Base Europeia • Temporada 2026</p>
                                                     </div>
                                                 </div>
-                                                <div className="flex flex-col items-end gap-1">
-                                                    <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-red-500/10 border border-red-500/20">
-                                                        <Lock className="w-3 h-3 text-red-500" />
-                                                        <span className="text-[8px] font-black text-red-500 uppercase tracking-tighter">BLOQUEADO</span>
+                                                <div className="flex flex-col items-end gap-1 flex-shrink-0">
+                                                    <div className="flex items-center gap-1 px-1.5 md:px-2 py-1 rounded bg-red-500/10 border border-red-500/20">
+                                                        <Lock className="w-2.5 h-2.5 md:w-3 md:h-3 text-red-500" />
+                                                        <span className="text-[7px] md:text-[8px] font-black text-red-500 uppercase tracking-tighter">BLOQUEADO</span>
                                                     </div>
                                                 </div>
                                             </div>
