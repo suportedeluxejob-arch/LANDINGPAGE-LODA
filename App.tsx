@@ -11,7 +11,9 @@ function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/upsell" element={<UpsellPage />} />
       <Route path="/back-fc26" element={<BackRedirectFC26 />} />
+      <Route path="/back26" element={<BackRedirectFC26 />} />
       <Route path="/back-fc25" element={<BackRedirectFC25 />} />
+      <Route path="/back25" element={<BackRedirectFC25 />} />
     </Routes>
   );
 }
