@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Zap, Clock, ShieldCheck, ChevronRight, CheckCircle2, Star, DownloadCloud } from 'lucide-react';
+import { Zap, Clock, ShieldCheck, ChevronRight, CheckCircle2, Star, DownloadCloud, Lock } from 'lucide-react';
 import { LOGO_URL, BACK_REDIRECT_FC26_PRICE, BACK_REDIRECT_FC26_LINK, BACK_REDIRECT_TITLE, BACK_REDIRECT_SUBTITLE, BACK_REDIRECT_FC26_IMAGE } from '../constants';
 
 const BackRedirectFC26: React.FC = () => {
@@ -75,15 +75,6 @@ const BackRedirectFC26: React.FC = () => {
                                 </div>
                             </div>
 
-                            {/* Desktop Features List (Visible only on desktop in this column) */}
-                            <div className="hidden lg:grid grid-cols-2 gap-4 mt-8">
-                                {features.map((f, i) => (
-                                    <div key={i} className="flex items-center gap-3 p-4 bg-white/5 border border-white/5 rounded-2xl">
-                                        <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                                        <span className="text-sm font-bold text-slate-300">{f}</span>
-                                    </div>
-                                ))}
-                            </div>
                         </div>
 
                         {/* Pricing and Action Column */}
@@ -109,14 +100,79 @@ const BackRedirectFC26: React.FC = () => {
                                     </p>
                                 </div>
 
-                                {/* Mobile Features List (Visible only on mobile in this column) */}
-                                <div className="lg:hidden space-y-3 mb-8">
-                                    {features.map((f, i) => (
-                                        <div key={i} className="flex items-center gap-3">
-                                            <CheckCircle2 className="w-4 h-4 text-blue-500 flex-shrink-0" />
-                                            <span className="text-sm font-medium text-slate-300">{f}</span>
+                                {/* Course-style Deliverables */}
+                                <div className="mb-8">
+                                    <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-4 flex items-center gap-2">
+                                        <DownloadCloud className="w-4 h-4 text-blue-400" /> Conteúdo do Pacote
+                                    </h3>
+
+                                    <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+                                        {/* Module Header */}
+                                        <div className="bg-blue-600/10 p-4 border-b border-white/5 flex items-center justify-between">
+                                            <span className="text-blue-400 font-bold text-xs uppercase tracking-tighter">Módulo: EA FC 26 Definitivo</span>
+                                            <ChevronRight className="w-4 h-4 text-blue-400 rotate-90" />
                                         </div>
-                                    ))}
+
+                                        {/* Lessons/Files */}
+                                        <div className="divide-y divide-white/5">
+                                            <div className="p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-8 h-8 rounded-lg bg-blue-600/20 flex items-center justify-center">
+                                                        <DownloadCloud className="w-4 h-4 text-blue-400" />
+                                                    </div>
+                                                    <span className="text-sm font-bold text-slate-300">Instalador Automático + Patch (Exclusivo)</span>
+                                                </div>
+                                                <div className="flex items-center gap-3">
+                                                    <span className="text-[10px] font-mono text-slate-500">2.4 GB</span>
+                                                    <Lock className="w-3 h-3 text-slate-600" />
+                                                </div>
+                                            </div>
+
+                                            <div className="p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-8 h-8 rounded-lg bg-red-600/20 flex items-center justify-center">
+                                                        <div className="w-0 h-0 border-t-[5px] border-t-transparent border-l-[8px] border-l-red-500 border-b-[5px] border-b-transparent ml-1"></div>
+                                                    </div>
+                                                    <span className="text-sm font-bold text-slate-300">Tutorial de Instalação e Ativação</span>
+                                                </div>
+                                                <div className="flex items-center gap-3">
+                                                    <span className="text-[10px] font-mono text-slate-500">03:45</span>
+                                                    <Lock className="w-3 h-3 text-slate-600" />
+                                                </div>
+                                            </div>
+
+                                            <div className="p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-8 h-8 rounded-lg bg-green-600/20 flex items-center justify-center">
+                                                        <CheckCircle2 className="w-4 h-4 text-green-500" />
+                                                    </div>
+                                                    <span className="text-sm font-bold text-slate-300">Times Brasileiros (Séries A & B) Atualizados</span>
+                                                </div>
+                                                <div className="flex items-center gap-3">
+                                                    <span className="text-[10px] font-mono text-slate-500">Arquivo</span>
+                                                    <Lock className="w-3 h-3 text-slate-600" />
+                                                </div>
+                                            </div>
+
+                                            <div className="p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-8 h-8 rounded-lg bg-amber-600/20 flex items-center justify-center">
+                                                        <CheckCircle2 className="w-4 h-4 text-amber-500" />
+                                                    </div>
+                                                    <span className="text-sm font-bold text-slate-300">Liga Europeia (La Liga) Atualizada</span>
+                                                </div>
+                                                <div className="flex items-center gap-3">
+                                                    <span className="text-[10px] font-mono text-slate-500">Arquivo</span>
+                                                    <Lock className="w-3 h-3 text-slate-600" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Immediate Access Footer */}
+                                        <div className="bg-black/20 p-3 text-center border-t border-white/5">
+                                            <span className="text-[10px] font-black text-blue-400 uppercase tracking-widest">Acesso Imediato Liberado após Confirmação</span>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <a
