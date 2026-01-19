@@ -109,61 +109,84 @@ const BackRedirectFC26: React.FC = () => {
                                     <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
                                         {/* Module Header */}
                                         <div className="bg-blue-600/10 p-4 border-b border-white/5 flex items-center justify-between">
-                                            <span className="text-blue-400 font-bold text-xs uppercase tracking-tighter">Módulo: EA FC 26 Definitivo</span>
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                                                <span className="text-blue-400 font-black text-xs uppercase tracking-widest">LIBERAÇÃO IMEDIATA PÓS-COMPRA</span>
+                                            </div>
                                             <ChevronRight className="w-4 h-4 text-blue-400 rotate-90" />
                                         </div>
 
                                         {/* Lessons/Files */}
-                                        <div className="divide-y divide-white/5">
+                                        <div className="divide-y divide-white/5 transition-all">
                                             <div className="p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
                                                 <div className="flex items-center gap-3">
-                                                    <div className="w-8 h-8 rounded-lg bg-blue-600/20 flex items-center justify-center">
-                                                        <DownloadCloud className="w-4 h-4 text-blue-400" />
+                                                    <div className="w-10 h-10 rounded-xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                                        <DownloadCloud className="w-5 h-5 text-blue-400" />
                                                     </div>
-                                                    <span className="text-sm font-bold text-slate-300">Instalador Automático + Patch (Exclusivo)</span>
+                                                    <div>
+                                                        <h4 className="text-sm font-black text-slate-100 uppercase tracking-tight">Instalador Automático + Patch</h4>
+                                                        <p className="text-[10px] text-slate-500 font-bold">Arquivo Exclusivo • 2.4 GB</p>
+                                                    </div>
                                                 </div>
-                                                <div className="flex items-center gap-3">
-                                                    <span className="text-[10px] font-mono text-slate-500">2.4 GB</span>
-                                                    <Lock className="w-3 h-3 text-slate-600" />
+                                                <div className="flex flex-col items-end gap-1">
+                                                    <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-red-500/10 border border-red-500/20">
+                                                        <Lock className="w-3 h-3 text-red-500" />
+                                                        <span className="text-[8px] font-black text-red-500 uppercase tracking-tighter">BLOQUEADO</span>
+                                                    </div>
                                                 </div>
                                             </div>
 
                                             <div className="p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
                                                 <div className="flex items-center gap-3">
-                                                    <div className="w-8 h-8 rounded-lg bg-red-600/20 flex items-center justify-center">
-                                                        <div className="w-0 h-0 border-t-[5px] border-t-transparent border-l-[8px] border-l-red-500 border-b-[5px] border-b-transparent ml-1"></div>
+                                                    <div className="w-10 h-10 rounded-xl bg-red-600/10 border border-red-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                                        <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-red-500 border-b-[6px] border-b-transparent ml-1"></div>
                                                     </div>
-                                                    <span className="text-sm font-bold text-slate-300">Tutorial de Instalação e Ativação</span>
+                                                    <div>
+                                                        <h4 className="text-sm font-black text-slate-100 uppercase tracking-tight">Tutorial de Instalação e Ativação</h4>
+                                                        <p className="text-[10px] text-slate-500 font-bold">Vídeo Aula • 03:45</p>
+                                                    </div>
                                                 </div>
-                                                <div className="flex items-center gap-3">
-                                                    <span className="text-[10px] font-mono text-slate-500">03:45</span>
-                                                    <Lock className="w-3 h-3 text-slate-600" />
+                                                <div className="flex flex-col items-end gap-1">
+                                                    <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-red-500/10 border border-red-500/20">
+                                                        <Lock className="w-3 h-3 text-red-500" />
+                                                        <span className="text-[8px] font-black text-red-500 uppercase tracking-tighter">BLOQUEADO</span>
+                                                    </div>
                                                 </div>
                                             </div>
 
                                             <div className="p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
                                                 <div className="flex items-center gap-3">
-                                                    <div className="w-8 h-8 rounded-lg bg-green-600/20 flex items-center justify-center">
-                                                        <CheckCircle2 className="w-4 h-4 text-green-500" />
+                                                    <div className="w-10 h-10 rounded-xl bg-green-600/10 border border-green-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                                        <CheckCircle2 className="w-5 h-5 text-green-500" />
                                                     </div>
-                                                    <span className="text-sm font-bold text-slate-300">Times Brasileiros (Séries A & B) Atualizados</span>
+                                                    <div>
+                                                        <h4 className="text-sm font-black text-slate-100 uppercase tracking-tight">Times Brasileiros (Séries A & B)</h4>
+                                                        <p className="text-[10px] text-slate-500 font-bold">Banco de Dados • Atualizado</p>
+                                                    </div>
                                                 </div>
-                                                <div className="flex items-center gap-3">
-                                                    <span className="text-[10px] font-mono text-slate-500">Arquivo</span>
-                                                    <Lock className="w-3 h-3 text-slate-600" />
+                                                <div className="flex flex-col items-end gap-1">
+                                                    <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-red-500/10 border border-red-500/20">
+                                                        <Lock className="w-3 h-3 text-red-500" />
+                                                        <span className="text-[8px] font-black text-red-500 uppercase tracking-tighter">BLOQUEADO</span>
+                                                    </div>
                                                 </div>
                                             </div>
 
                                             <div className="p-4 flex items-center justify-between group hover:bg-white/5 transition-colors cursor-default">
                                                 <div className="flex items-center gap-3">
-                                                    <div className="w-8 h-8 rounded-lg bg-amber-600/20 flex items-center justify-center">
-                                                        <CheckCircle2 className="w-4 h-4 text-amber-500" />
+                                                    <div className="w-10 h-10 rounded-xl bg-amber-600/10 border border-amber-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                                        <CheckCircle2 className="w-5 h-5 text-amber-500" />
                                                     </div>
-                                                    <span className="text-sm font-bold text-slate-300">Liga Europeia (La Liga) Atualizada</span>
+                                                    <div>
+                                                        <h4 className="text-sm font-black text-slate-100 uppercase tracking-tight">Liga Europeia (La Liga)</h4>
+                                                        <p className="text-[10px] text-slate-500 font-bold">Base Europeia • Temporada 2026</p>
+                                                    </div>
                                                 </div>
-                                                <div className="flex items-center gap-3">
-                                                    <span className="text-[10px] font-mono text-slate-500">Arquivo</span>
-                                                    <Lock className="w-3 h-3 text-slate-600" />
+                                                <div className="flex flex-col items-end gap-1">
+                                                    <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-red-500/10 border border-red-500/20">
+                                                        <Lock className="w-3 h-3 text-red-500" />
+                                                        <span className="text-[8px] font-black text-red-500 uppercase tracking-tighter">BLOQUEADO</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
