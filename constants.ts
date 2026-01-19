@@ -80,14 +80,33 @@ export const CHECKOUT_LINK_EAFC25 = "https://go.invictuspay.app.br/s0h0uifvmd";
 export const UPSELL_IMAGE_URL = "/copa2026.jpg";
 
 // Este é o link do checkout do seu produto de UPSELL (Copa 2026)
-export const UPSELL_LINK = "https://go.invictuspay.app.br/INSIRA_AQUI_SEU_LINK_DE_UPSELL";
+export const UPSELL_LINK = "https://go.invictuspay.app.br/upsell";
 
 // Este é o link para onde o cliente vai se ele RECUSAR a oferta
 // Geralmente é o seu link de Thank You Page ou o link de Redirecionamento da Gateway
-export const REJECTION_LINK = "https://go.invictuspay.app.br/INSIRA_AQUI_SEU_LINK_DE_RECUSA";
+export const REJECTION_LINK = "";
 
 // Padrão para compatibilidade com outros componentes (como Pricing.tsx)
 export const CHECKOUT_LINK = CHECKOUT_LINK_EAFC26;
+
+// ========================================
+// 💰 CONFIGURAÇÃO DE BACK-REDIRECT (ESTRATÉGIA AGRESSIVA)
+// ========================================
+// Preços extremamente baixos para não perder a venda no "Back Redirect"
+export const BACK_REDIRECT_FC26_PRICE = "R$ 39,90";
+export const BACK_REDIRECT_FC25_PRICE = "R$ 29,90";
+
+// Links de checkout específicos para o Back Redirect (Crie links com os preços acima na sua gateway)
+export const BACK_REDIRECT_FC26_LINK = "https://go.invictuspay.app.br/back26";
+export const BACK_REDIRECT_FC25_LINK = "https://go.invictuspay.app.br/back25";
+
+// Imagem específica para o Back Redirect do FC26 (Baseada no pacote definitivo)
+export const BACK_REDIRECT_FC26_IMAGE = "/backredirect_fc26.jpg";
+
+// Copy impactante - Estilo Wall Street / Black Hat
+export const BACK_REDIRECT_TITLE = "ESPERE! NÃO PERCA O PACOTE DEFINITIVO.";
+export const BACK_REDIRECT_SUBTITLE = "O conteúdo global mais completo reunido em uma só licença. A oportunidade final.";
+export const BACK_REDIRECT_URGENCY = "ESTA OFERTA EXPIRA EM:";
 
 // ========================================
 // 🎮 VERSÕES DISPONÍVEIS COM PREÇOS
