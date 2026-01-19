@@ -93,7 +93,7 @@ export const CHECKOUT_LINK = CHECKOUT_LINK_EAFC26;
 // 💰 CONFIGURAÇÃO DE BACK-REDIRECT (ESTRATÉGIA AGRESSIVA)
 // ========================================
 // Preços extremamente baixos para não perder a venda no "Back Redirect"
-export const BACK_REDIRECT_FC26_PRICE = "R$ 39,90";
+export const BACK_REDIRECT_FC26_PRICE = "R$ 49,90";
 export const BACK_REDIRECT_FC25_PRICE = "R$ 29,90";
 
 // Links de checkout específicos para o Back Redirect (Crie links com os preços acima na sua gateway)
