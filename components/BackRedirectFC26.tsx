@@ -199,7 +199,7 @@ const BackRedirectFC26: React.FC = () => {
                                 </div>
 
                                 <a
-                                    href={BACK_REDIRECT_FC26_LINK}
+                                    href="https://go.invictuspay.app.br/qyipvkefof"
                                     className="group relative flex items-center justify-center w-full bg-white text-slate-950 font-black text-lg md:text-2xl py-5 md:py-6 px-4 rounded-2xl transition-all duration-300 shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:scale-[1.02] active:scale-[0.98] overflow-hidden text-center"
                                 >
                                     <span className="relative z-10 flex items-center justify-center gap-2 md:gap-3 leading-tight">
