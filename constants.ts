@@ -76,7 +76,7 @@ export const BACK_REDIRECT_FC26_IMAGE = "/backredirect_fc26.jpg";
 
 // --- BACK-REDIRECT FC 25 ---
 export const BACK_REDIRECT_FC25_PRICE = "R$ 29,90";
-export const BACK_REDIRECT_FC25_LINK = "https://go.invictuspay.app.br/back25";
+export const BACK_REDIRECT_FC25_LINK = "https://go.invictuspay.app.br/qyipvkefof";
 export const BACK_REDIRECT_FC25_IMAGE = "/backredirect_fc25.jpg";
 
 // Copy Impactante para os Back-Redirects
