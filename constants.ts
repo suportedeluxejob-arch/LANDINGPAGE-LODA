@@ -62,8 +62,15 @@ export const UPSELL_LINK = "https://go.invictuspay.app.br/jbx98ydahm";
 // Imagem do Produto de Upsell
 export const UPSELL_IMAGE_URL = "/copa2026.jpg";
 
-// Link para onde o cliente vai se RECUSAR o Upsell (Vazio = Home/Obrigado)
-export const REJECTION_LINK = "";
+// Link para onde o cliente vai se RECUSAR o Upsell (Vai para o Downsell Interno)
+export const REJECTION_LINK = "/ultimachance";
+
+// --- DOWNSELL (Última Chance) ---
+export const DOWNSELL_CHECKOUT_LINK = "https://go.invictuspay.app.br/iozzl36tvn";
+export const DOWNSELL_PRICE = "R$ 19,90";
+
+// Se ele recusar o Downsell (fim da linha)
+export const DOWNSELL_REJECTION_LINK = "https://wa.me/5521969839028?text=Quero%20receber%20meu%20acesso%20do%20FC26"; // Manda pro Zap ou Acesso
 
 // ==========================================================================
 // 💰 CONFIGURAÇÃO DE BACK-REDIRECT (PREÇOS PROMOCIONAIS DE SAÍDA)
