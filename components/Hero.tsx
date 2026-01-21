@@ -195,7 +195,7 @@ export const Hero: React.FC = () => {
               </Button>
               <div className="flex items-center justify-center gap-2 mt-3 text-slate-600 text-xs font-medium bg-blue-50/80 border border-blue-100 py-2 px-4 rounded-full mx-auto w-fit">
                 <Users className="w-3.5 h-3.5 text-blue-600" />
-                <span>12 pessoas estão interessadas agora</span>
+                <span>Alta Procura: 12 pessoas estão interessadas agora</span>
               </div>
             </div>
 
