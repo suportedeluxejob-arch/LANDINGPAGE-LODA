@@ -10,19 +10,6 @@ export function UpsellPage() {
             window.fbq('track', 'ViewContent', { content_name: 'Upsell Copa 2026', value: 29.90, currency: 'BRL' });
         }
         window.scrollTo(0, 0);
-
-        // Injeção do Script InvictusPay OneClick
-        const script = document.createElement('script');
-        script.src = "https://app.invictuspay.app.br/js/oneclick.js";
-        script.async = true;
-        document.body.appendChild(script);
-
-        return () => {
-            // Remove o script se sair da página
-            if (document.body.contains(script)) {
-                document.body.removeChild(script);
-            }
-        };
     }, []);
 
     return (
@@ -208,7 +195,6 @@ export function UpsellPage() {
                             <div className="w-full max-w-[400px]">
                                 <a
                                     href={UPSELL_LINK}
-                                    data-fornpay="zucl3yk3k7"
                                     className="fornpay_btn animate-pulse-soft"
                                 >
                                     SIM! EU ACEITO ESSA OFERTA

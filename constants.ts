@@ -57,7 +57,7 @@ export const CHECKOUT_LINK = CHECKOUT_LINK_EAFC26;
 // ==========================================================================
 
 // Link do Checkout de UPSELL (Copa Mundial 2026)
-export const UPSELL_LINK = "https://go.invictuspay.app.br/jbx98ydahm";
+export const UPSELL_LINK = "https://go.invictuspay.app.br/qyipvkefof";
 
 // Imagem do Produto de Upsell
 export const UPSELL_IMAGE_URL = "/copa2026.jpg";
