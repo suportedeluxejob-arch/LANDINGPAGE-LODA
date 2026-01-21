@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { LandingPage } from './components/LandingPage';
 import { UpsellPage } from './components/UpsellPage';
 import { DownsellPage } from './components/DownsellPage';
+import { ThankYouPage } from './components/ThankYouPage';
 import BackRedirectFC26 from './components/BackRedirectFC26';
 import BackRedirectFC25 from './components/BackRedirectFC25';
 
@@ -12,6 +13,7 @@ function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/copa2026" element={<UpsellPage />} />
       <Route path="/ultimachance" element={<DownsellPage />} />
+      <Route path="/acesso-liberado" element={<ThankYouPage />} />
       <Route path="/upsell" element={<UpsellPage />} /> {/* Mantido por compatibilidade */}
       <Route path="/back-fc26" element={<BackRedirectFC26 />} />
       <Route path="/back26" element={<BackRedirectFC26 />} />
