@@ -54,16 +54,18 @@ export function DownsellPage() {
                     </div>
 
                     <div className="flex flex-col md:flex-row items-center gap-6 mb-6">
-                        <img
-                            src={UPSELL_IMAGE_URL}
-                            alt="Copa 2026"
-                            className="w-24 h-24 md:w-32 md:h-32 rounded-xl object-cover shadow-lg grayscale hover:grayscale-0 transition-all duration-500"
-                        />
+                        <div className="w-full max-w-[240px] md:max-w-[140px] aspect-square shrink-0 rounded-xl overflow-hidden shadow-lg border border-white/10 bg-slate-800 mx-auto md:mx-0">
+                            <img
+                                src={UPSELL_IMAGE_URL}
+                                alt="Copa 2026"
+                                className="w-full h-full object-contain"
+                            />
+                        </div>
                         <div className="text-center md:text-left flex-1">
                             <h3 className="text-lg font-bold text-white mb-1">Edição Copa do Mundo 2026</h3>
                             <p className="text-xs text-slate-400 mb-3">Acesso completo + Estádios + Elencos da Seleção</p>
 
-                            <div className="flex items-center justify-center md:justify-start gap-3">
+                            <div className="flex items-center justify-center gap-3">
                                 <span className="text-slate-500 line-through text-sm">De R$ 29,90</span>
                                 <span className="text-3xl font-black text-green-400">{DOWNSELL_PRICE}</span>
                             </div>
