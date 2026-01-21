@@ -9,7 +9,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      <Route path="/upsell" element={<UpsellPage />} />
+      <Route path="/copa2026" element={<UpsellPage />} />
+      <Route path="/upsell" element={<UpsellPage />} /> {/* Mantido por compatibilidade */}
       <Route path="/back-fc26" element={<BackRedirectFC26 />} />
       <Route path="/back26" element={<BackRedirectFC26 />} />
       <Route path="/back-fc25" element={<BackRedirectFC25 />} />
