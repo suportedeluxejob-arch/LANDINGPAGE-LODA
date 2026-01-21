@@ -7,7 +7,22 @@ const BackRedirectFC26: React.FC = () => {
 
     useEffect(() => {
         const timer = setInterval(() => setTimeLeft(prev => (prev > 0 ? prev - 1 : 0)), 1000);
-        return () => clearInterval(timer);
+
+        // Lógica de "Back Redirect" para o Upsell da Copa
+        // Empurra um estado novo para o histórico
+        window.history.pushState(null, '', window.location.href);
+
+        const handlePopState = () => {
+            // Se o usuário clicar em voltar, manda para o Upsell da Copa
+            window.location.href = '/copa2026';
+        };
+
+        window.addEventListener('popstate', handlePopState);
+
+        return () => {
+            clearInterval(timer);
+            window.removeEventListener('popstate', handlePopState);
+        };
     }, []);
 
     const formatTime = (seconds: number) => {
