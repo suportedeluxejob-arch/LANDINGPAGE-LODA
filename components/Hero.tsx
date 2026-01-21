@@ -173,9 +173,16 @@ export const Hero: React.FC = () => {
                         : 'border-slate-200 bg-white hover:border-blue-300'
                         }`}
                     >
-                      <p className="text-sm font-bold text-slate-900">{version.eaVersion}</p>
-                      <p className="text-xs text-slate-500 line-through">{version.priceOld}</p>
-                      <p className="text-base font-black text-blue-600">{version.priceNew}</p>
+                      <div className="flex justify-between items-start w-full">
+                        <div>
+                          <p className="text-sm font-extrabold text-slate-900 uppercase">{version.eaVersion}</p>
+                          <p className="text-xs text-slate-500 line-through">{version.priceOld}</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-base font-black text-blue-600">{version.priceNew}</p>
+                          <p className="text-[10px] font-bold text-red-500 animate-pulse">Restam 7 un.</p>
+                        </div>
+                      </div>
                     </button>
                   ))}
                 </div>
@@ -186,6 +193,9 @@ export const Hero: React.FC = () => {
               <Button onClick={handleCheckout} className="text-lg w-full shadow-lg shadow-blue-500/30 animate-pulse-slow">
                 QUERO ATUALIZAR MEU EA FC HOJE
               </Button>
+              <p className="text-center text-xs font-semibold text-red-500 uppercase tracking-wide">
+                ⚠️ Alta Procura: 12 pessoas estão comprando agora
+              </p>
             </div>
 
             <div className="flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-between gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100 w-full">

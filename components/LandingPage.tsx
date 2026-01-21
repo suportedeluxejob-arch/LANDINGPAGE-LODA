@@ -7,6 +7,7 @@ import { TeamShowcase } from './TeamShowcase';
 import { ClientFeedback } from './ClientFeedback';
 import { Footer } from './Footer';
 import { WhatsAppSupport } from './WhatsAppSupport';
+import { ScarcityBar } from './ScarcityBar';
 import { LOGO_URL } from '../constants';
 
 export function LandingPage() {
@@ -41,6 +42,9 @@ export function LandingPage() {
 
             {/* Botão Flutuante de Suporte WhatsApp */}
             <WhatsAppSupport />
+
+            {/* Barra de Escassez Fixa */}
+            <ScarcityBar />
         </div>
     );
 }
