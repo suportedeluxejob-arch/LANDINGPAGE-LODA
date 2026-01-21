@@ -42,9 +42,6 @@ export function LandingPage() {
 
             {/* Botão Flutuante de Suporte WhatsApp */}
             <WhatsAppSupport />
-
-            {/* Barra de Escassez Fixa */}
-            <ScarcityBar />
         </div>
     );
 }

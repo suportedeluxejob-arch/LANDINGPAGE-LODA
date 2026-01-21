@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
-import { CheckCircle2, ShieldCheck, Trophy, ChevronLeft, ChevronRight } from 'lucide-react';
+import { CheckCircle2, ShieldCheck, Trophy, ChevronLeft, ChevronRight, Users, Zap } from 'lucide-react';
 import { HERO_IMAGE_URL, GAME_VERSIONS, HERO_CAROUSEL_IMAGES } from '../constants';
 
 export const Hero: React.FC = () => {
@@ -193,9 +193,10 @@ export const Hero: React.FC = () => {
               <Button onClick={handleCheckout} className="text-lg w-full shadow-lg shadow-blue-500/30 animate-pulse-slow">
                 QUERO ATUALIZAR MEU EA FC HOJE
               </Button>
-              <p className="text-center text-xs font-semibold text-red-500 uppercase tracking-wide">
-                ⚠️ Alta Procura: 12 pessoas estão comprando agora
-              </p>
+              <div className="flex items-center justify-center gap-2 mt-3 text-slate-600 text-xs font-medium bg-blue-50/80 border border-blue-100 py-2 px-4 rounded-full mx-auto w-fit">
+                <Users className="w-3.5 h-3.5 text-blue-600" />
+                <span>12 pessoas estão interessadas agora</span>
+              </div>
             </div>
 
             <div className="flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-between gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100 w-full">
